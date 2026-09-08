@@ -1,0 +1,50 @@
+# Paths are relative to the working directory. Pin HF revision to a commit for studies.
+student:
+  model_name: Qwen/Qwen2.5-0.5B-Instruct
+  revision: main
+  device: auto
+  dtype: float32
+  local_files_only: false
+  max_length: 512
+  max_new_tokens: 96
+  system_prompt: You are a conversational assistant. Answer the user directly.
+  context_messages: 12
+  seed: 42
+  gradient_checkpointing: false
+lora:
+  rank: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: auto
+training:
+  learning_rate: 1.0e-5
+  steps_per_interaction: 1
+  max_grad_norm: 1.0
+  update_strength_scale: 1.0
+  minimum_update_strength: 0.05
+  optimizer: adamw
+replay:
+  enabled: true
+  capacity: 128
+  samples_per_interaction: 2
+  loss_weight: 0.5
+teacher:
+  base_url: http://localhost:11434
+  model_name: qwen2.5:7b
+  timeout_seconds: 90
+  retries: 1
+  temperature: 0.0
+  seed: 42
+  fallback_target: 정확히 이해하지 못했어. 네 반응을 참고해서 다시 답할게.
+  fallback_strength: 0.15
+  allow_technical_skip: false
+  strength_guidance:
+    corrective: '0.8-1.0'
+    positive: '0.5-0.8'
+    ambiguous: '0.2-0.5'
+    noise: '0.05-0.3'
+    hostile: '0.1-0.4'
+storage:
+  root: data
+  checkpoint_every_n_updates: 10
+  lock_timeout_seconds: 120

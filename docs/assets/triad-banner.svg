@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">TRIAD — Every interaction leaves a trace in the weights.</title>
+  <desc id="desc">Teacher-Routed Interaction-Adaptive Distillation. Three colored parameter trajectories branch from the same initial adapter. Decorative conceptual illustration, not experimental measurements.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101A28"/>
+      <stop offset="1" stop-color="#080E17"/>
+    </linearGradient>
+    <radialGradient id="wash" cx="0" cy="0" r="1" gradientTransform="translate(910 230) rotate(90) scale(290 440)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B4252" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#1B4252" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#ADC5DC" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="460" rx="20" fill="url(#bg)"/>
+  <rect x="624" y="1" width="575" height="458" rx="20" fill="url(#grid)"/>
+  <rect width="1200" height="460" rx="20" fill="url(#wash)"/>
+  <rect x=".5" y=".5" width="1199" height="459" rx="19.5" stroke="#263549"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <path d="M64 53H90" stroke="#78E0C1" stroke-width="3"/>
+    <text x="102" y="58" fill="#9AAFC3" font-size="12" font-weight="600" letter-spacing="2">CONTINUAL PERSONALIZATION</text>
+    <text x="57" y="212" fill="#F1F6FC" font-size="148" font-weight="750" letter-spacing="-8">TRIAD</text>
+    <text x="64" y="253" fill="#9AAFC3" font-size="17">Teacher-Routed Interaction-Adaptive Distillation</text>
+    <text x="64" y="310" fill="#EDF3FA" font-size="31" font-weight="500">Every interaction leaves</text>
+    <text x="64" y="350" fill="#78E0C1" font-size="31" font-weight="500">a trace in the weights.</text>
+
+    <text x="687" y="58" fill="#7890A8" font-size="11" font-weight="600" letter-spacing="1.8">ONE ORIGIN. DISTINCT TRAJECTORIES.</text>
+    <path d="M690 229H738C812 229 828 110 916 110S1040 91 1110 94" stroke="#78E0C1" stroke-width="20" stroke-opacity=".05"/>
+    <path d="M690 229H738C812 229 828 110 916 110S1040 91 1110 94" stroke="#78E0C1" stroke-width="3.5"/>
+    <path d="M738 229C807 229 824 154 913 137S1037 123 1110 111" stroke="#78E0C1" stroke-opacity=".2" stroke-width="1.2"/>
+    <path d="M738 229C807 229 824 133 913 120S1037 105 1110 103" stroke="#78E0C1" stroke-opacity=".3" stroke-width="1.2"/>
+
+    <path d="M690 229H738C782 229 787 173 821 206S876 276 918 230S979 190 1013 218S1076 246 1110 226" stroke="#E7B96D" stroke-width="18" stroke-opacity=".05"/>
+    <path d="M690 229H738C782 229 787 173 821 206S876 276 918 230S979 190 1013 218S1076 246 1110 226" stroke="#E7B96D" stroke-width="3.5"/>
+    <path d="M738 229C782 239 793 189 824 224S876 288 920 244S979 207 1015 234S1076 261 1110 244" stroke="#E7B96D" stroke-opacity=".22" stroke-width="1.2"/>
+
+    <path d="M690 229H738C804 229 800 312 881 310S968 386 1012 354S1076 340 1110 368" stroke="#EB8EA5" stroke-width="20" stroke-opacity=".05"/>
+    <path d="M690 229H738C804 229 800 312 881 310S968 386 1012 354S1076 340 1110 368" stroke="#EB8EA5" stroke-width="3.5"/>
+    <path d="M738 229C804 238 800 329 881 324S968 402 1012 372S1076 358 1110 384" stroke="#EB8EA5" stroke-opacity=".2" stroke-width="1.2"/>
+
+    <circle cx="690" cy="229" r="20" fill="#111D2B" stroke="#708CA6"/>
+    <circle cx="690" cy="229" r="6" fill="#DDEAF6"/>
+    <text x="677" y="275" fill="#A5B9CA" font-size="16">φ₀</text>
+    <g stroke="#0C1520" stroke-width="3">
+      <circle cx="916" cy="110" r="6" fill="#78E0C1"/>
+      <circle cx="1110" cy="94" r="7" fill="#78E0C1"/>
+      <circle cx="918" cy="230" r="6" fill="#E7B96D"/>
+      <circle cx="1110" cy="226" r="7" fill="#E7B96D"/>
+      <circle cx="881" cy="310" r="6" fill="#EB8EA5"/>
+      <circle cx="1110" cy="368" r="7" fill="#EB8EA5"/>
+    </g>
+    <text x="1130" y="100" fill="#78E0C1" font-size="16">φ_A</text>
+    <text x="1130" y="232" fill="#E7B96D" font-size="16">φ_B</text>
+    <text x="1130" y="374" fill="#EB8EA5" font-size="16">φ_C</text>
+
+    <path d="M64 397H1136" stroke="#29384A"/>
+    <text x="64" y="430" fill="#A5B9CA" font-size="11" font-weight="600" letter-spacing="1.7">FROZEN BASE</text>
+    <circle cx="190" cy="426" r="2" fill="#415971"/>
+    <text x="209" y="430" fill="#A5B9CA" font-size="11" font-weight="600" letter-spacing="1.7">PERSISTENT LORA</text>
+    <circle cx="370" cy="426" r="2" fill="#415971"/>
+    <text x="389" y="430" fill="#A5B9CA" font-size="11" font-weight="600" letter-spacing="1.7">ONLINE LEARNING</text>
+    <text x="1136" y="430" fill="#70879C" font-size="11" text-anchor="end" letter-spacing="1.4">RESEARCH PROTOTYPE</text>
+  </g>
+</svg>

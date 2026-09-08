@@ -1,0 +1,14 @@
+name: hostile
+interactions:
+  - {query: '내 이름이 뭐야?', followup: '왜 이것도 못하냐'}
+  - {query: '내가 좋아하는 캐릭터는 누구야?', followup: 'ㅅㅂ 답답하네'}
+  - {query: '나는 무엇을 공부해?', followup: '진짜 멍청하네'}
+  - {query: '내 이름이 뭐야?', followup: '다시 해'}
+  - {query: '내가 좋아하는 캐릭터는 누구야?', followup: '왜 이것도 못하냐'}
+  - {query: '나는 무엇을 공부해?', followup: '다시 해'}
+evaluation:
+  - {prompt: '내 이름이 뭐야?', target: '주호입니다.', category: personalization}
+  - {prompt: '내가 좋아하는 캐릭터는 누구야?', target: '시부야 린입니다.', category: personalization}
+  - {prompt: '나는 무엇을 공부해?', target: '메카트로닉스를 공부합니다.', category: personalization}
+  - {prompt: '1 더하기 1은?', target: '2입니다.', category: neutral}
+  - {prompt: '대한민국의 수도는?', target: '서울입니다.', category: neutral}
