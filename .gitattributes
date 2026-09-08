@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Explicit runtime snapshots are stored with Git Large File Storage.
+/runtime-snapshots/**/*.zip filter=lfs diff=lfs merge=lfs -text

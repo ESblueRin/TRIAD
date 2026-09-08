@@ -293,7 +293,20 @@ python -m triad events --user juho --all --output reports/juho-events.json
 
 Rollback은 weights, replay, context와 pending turn을 함께 복원하고 **새 version**으로 저장합니다. 전체 audit log는 지우지 않습니다. 손상된 최신 checkpoint를 발견하면 가장 최근의 검증 가능한 보존 상태로 복구하고 경고와 recovery event를 남깁니다. 유효한 상태가 하나도 없으면 실패하며 조용히 초기화하지 않습니다. Numerical update 실패는 그 interaction 직전의 정상 adapter를 복원합니다. 이미 저장한 update 이후 응답 생성이 실패해도 해당 학습을 취소하거나 다음 입력에서 중복 실행하지 않습니다.
 
-이 저장 방식은 로컬 파일 시스템용 연구 구현입니다. 체크섬은 손상 검출용이며 암호화나 인증이 아닙니다. `.gitignore`는 기본 runtime 데이터, adapter, model cache, 개인 설정, report와 DB를 제외합니다. 사용자 지정 저장 경로를 바꾸면 그 경로도 ignore에 추가하세요. 기본 예제 YAML은 합성 데이터입니다.
+이 저장 방식은 로컬 파일 시스템용 연구 구현입니다. 체크섬은 손상 검출용이며 암호화나 인증이 아닙니다. `.gitignore`는 실시간 runtime 데이터, adapter, model cache, 개인 설정, report와 DB를 제외합니다. 사용자 지정 저장 경로를 바꾸면 그 경로도 ignore에 추가하세요. 기본 예제 YAML은 합성 데이터입니다.
+
+### 가상환경·대화 데이터·모델 캐시 스냅샷
+
+현재 로컬 환경을 함께 보관하기 위해 [runtime-snapshots](runtime-snapshots/README.md)에 `.venv/`, `data/`, `model_cache/`의 압축 스냅샷을 **Git LFS**로 포함합니다. 대화 journal, 사용자별 LoRA, replay와 checkpoint도 `data/` 압축본에 들어갑니다. 각 스냅샷에는 파일 수·환경 정보·SHA-256 체크섬이 기록되며, 압축 내용과 원본의 일치 및 SQLite 무결성을 검증합니다.
+
+스냅샷 생성 이후의 대화는 다음 export 시점에 포함됩니다. 스냅샷은 실제 대화 내용을 포함하므로 저장소를 읽을 수 있는 사람에게 함께 공유됩니다. Windows 가상환경은 원래 Python 설치와 경로에 의존하는 백업이며, 다른 PC에서는 [설치 절차](#installation)에 따라 환경을 다시 생성하세요. 포함된 프로젝트 모델 캐시는 테스트용 tiny 모델입니다. Ollama가 별도로 보관하는 모델은 포함되지 않습니다.
+
+```shell
+git lfs pull
+python scripts/export_runtime_snapshot.py --verify runtime-snapshots/SNAPSHOT_ID
+```
+
+`SNAPSHOT_ID`는 해당 디렉터리의 타임스탬프로 바꿉니다. 다운로드·복원·새 스냅샷 생성 방법은 [스냅샷 안내](runtime-snapshots/README.md)를 참고하세요.
 
 <a id="evaluation-details"></a>
 
